@@ -1,0 +1,50 @@
+// TS-04:40-27:54: default
+GET http://localhost:5000
+
+// TS-46:54-01:20:22:this hash sign separates your http requests
+###
+// TS-46:54-01:20:22: games list
+GET http://localhost:5000/games
+
+###
+// TS-46:54-01:20:22: specific game id
+GET http://localhost:5000/games/7
+
+###
+// TS-46:54-01:20:22: leave one empty line after the Content-Type
+POST http://localhost:5000/games
+Content-Type: application/json
+
+{
+    "name": "Minecraft",
+    "genreId": 5,
+    // TS-01:28:29-01:39:49: "genre": "Kids and Family",
+    "price": 19.99,
+    "releaseDate": "2011-11-18"
+}
+
+
+###
+// TS-46:54-01:20:22: Put replaces the object completely
+PUT http://localhost:5000/games/7
+Content-Type: application/json
+
+{
+    "name": "Street Fighter II Turbo",
+    "genreId": 1,
+    "price": 39.99,
+    "releaseDate": "1992-07-15"
+}
+
+// TS-02:56:05-03:18:16: {
+// TS-02:56:05-03:18:16:      "name": "Street Fighter II Turbo",
+// TS-02:56:05-03:18:16:      "genre": "Fighting",
+// TS-02:56:05-03:18:16:      "price": 9.99,
+// TS-02:56:05-03:18:16:      "releaseDate": "1992-07-15"
+// TS-02:56:05-03:18:16: }
+
+
+
+###
+// TS-46:54-01:20:22: 
+DELETE http://localhost:5000/games/1
